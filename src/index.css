@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: rgb(242, 252, 255);
+  font-family: pixelfont;
+}
+
+@font-face {
+  font-family: "pixelfont";
+  src: local("themevck-text"),
+    url("./assets/fonts/themevck-text.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "dogica";
+  src: local("dogica"),
+    url("./assets/fonts/dogica.ttf") format("truetype");
+}
+
+.rendering-auto {
+  image-rendering: auto;
+}
+.rendering-crisp-edges {
+  image-rendering: crisp-edges;
+}
+.rendering-pixelated {
+  image-rendering: pixelated;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #FF6190; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #da537c; 
+}
