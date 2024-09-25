@@ -63,7 +63,7 @@ function Dropdown() {
       {isDropdownVisible && (
         <div className="border-t-8 border-[#00000000;]">
           <div className="min-w-[640px] min-h-[320px] absolute bg-[#ffffff] border-b-8 border-[#3D58BA]">
-            <p className="text-center p-2 hover:bg-[#00000010] cursor-pointer">Test</p>
+            <p className="text-center p-2 hover:bg-[#00000010] cursor-pointer">lol</p>
           </div>
         </div>
       )}

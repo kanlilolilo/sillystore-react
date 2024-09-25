@@ -33,7 +33,7 @@ function Header() {
   };
 
   return (
-    <div>
+    <div className="z-20 relative">
       <div className={`flex w-full h-[28px] bg-[#46CC9C] text-white text-sm overflow-hidden`}>
         <div className={`${styles.animatescroll}`}>
           <p className="mt-0.5 mx-auto my-auto mb-[6px] whitespace-nowrap">Products may ship (they won't :3)</p>

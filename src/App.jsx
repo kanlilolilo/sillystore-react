@@ -4,14 +4,12 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Home from './components/Home';
 import Cart from './components/Cart';
-import Carousel from './components/Carousel';
 
 function App() {
   return (
     <div>
       <Header />
       <div className="w-full justify-center items-center text-xl font-bold p-6">
-        <Carousel />
         <Routes>
           <Route path="/cart" element={<Cart />} />
           <Route path="/" element={<Home />} />
