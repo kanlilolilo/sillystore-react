@@ -41,10 +41,10 @@ background: #f1f1f1;
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-background: #FF6190; 
+background: #3D58BA; 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-background: #da537c; 
+background: #344da9; 
 }

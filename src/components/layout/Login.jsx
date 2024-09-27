@@ -5,9 +5,14 @@ import styles from './Header.module.css';
 import user from '../../assets/img/user_img.png';
 
 function Login() {
+  const navigate = useNavigate();
+
+  const goToLogin = () => {
+    navigate('/auth/login');
+  };
 
   return (
-    <div>
+    <div onClick={goToLogin}>
       <a className="cursor-pointer flex hover:bg-[#98c1f990] rounded-lg transition pl-2 pb-2 mb-1 mt-1">
         <p className={`font-bold text-[#adf2ff] mt-3`}>Log In</p>
         <img

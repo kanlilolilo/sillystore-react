@@ -1,6 +1,6 @@
 body {
   background-image: url(../../assets/img/background1.png);
-  background-size: cover;
+  background-size: contain;
   background-repeat: repeat;
   animation: moveBackground 30s linear infinite;
 }
@@ -21,10 +21,10 @@ body {
 
 @keyframes scroll {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(100vw);
   }
   100% {
-    transform: translateX(100vw);
+    transform: translateX(-100%);
   }
 }
 
@@ -47,4 +47,24 @@ body {
 .dropdown {
   background-image: url(../../assets/img/dropdown_img.png);
   background-size: cover;
+}
+
+.filterbar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.filterbar::-webkit-scrollbar-thumb:hover {
+  background-color: #e27114;
+}
+  
+.filterbar::-webkit-scrollbar-thumb {
+  margin-top: 12px;
+  background-color: #fd7200;
+  border-right: none;
+  border-left: none;
+}
+
+.filterbar::-webkit-scrollbar-track {
+  background: transparent;
+  height: 10px;
 }

@@ -1,13 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Header.module.css';
+import HamburgerMenu from './HamburgerMenu';
 import Dropdown from './Dropdown';
 import Login from './Login';
 
 import logo from '../../assets/img/logo_large.png';
 import logosmall from '../../assets/img/logo_small.png';
-
-import menu from '../../assets/img/menu.png';
 
 import heart from '../../assets/img/heart_img.png';
 import heartFull from '../../assets/img/heart_full_img.png';
@@ -33,7 +32,7 @@ function Header() {
   };
 
   return (
-    <div className="z-20 relative">
+    <div className="z-20 sticky top-0">
       <div className={`flex w-full h-[28px] bg-[#46CC9C] text-white text-sm overflow-hidden`}>
         <div className={`${styles.animatescroll}`}>
           <p className="mt-0.5 mx-auto my-auto mb-[6px] whitespace-nowrap">Products may ship (they won't :3)</p>
@@ -42,10 +41,12 @@ function Header() {
       <div className={`flex w-full h-16 px-6 bg-[#98c1f9] border-b-8 border-[#3D58BA] drop-shadow-xl max-lg:px-[0px] ${styles.banner}`}>
         <a onClick={goHome} class="flex my-auto">
           <img className="h-12 mr-4 hover:bg-[#98c1f990] rounded-lg transition cursor-pointer rendering-pixelated hidden xl:block" src={logo} alt="Logo" />
-          <img className="h-14 ml-2 p-1 rounded-lg transition cursor-pointer rendering-pixelated lg:hidden min-w-14" src={menu} alt="menu" />
+        </a>
+        <HamburgerMenu />
+        <a onClick={goHome} class="flex my-auto">
           <img className="h-12 lg:mr-2 max-lg:ml-1 max-lg:my-1 p-1 hover:bg-[#98c1f990] rounded-lg transition cursor-pointer rendering-pixelated xl:hidden max-sm:hidden min-w-12" src={logosmall} alt="Logosmall" />
         </a>
-
+        
         <div className="max-lg:hidden">
           <Dropdown />
         </div>

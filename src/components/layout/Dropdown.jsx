@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './Header.module.css';
 
 function Dropdown() {
-  const [setIsHovered] = useState(false);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const dropdownRef = useRef(null);
@@ -15,6 +15,11 @@ function Dropdown() {
       setIsDropdownVisible(false);
       setIsClicked(false);
     }
+  };
+
+  const toggleDropdownDown = () => {
+    setIsDropdownVisible(false);
+    setIsClicked(false);
   };
 
   useEffect(() => {
@@ -34,15 +39,20 @@ function Dropdown() {
   const handleMouseEnter = () => {
     if (!isClicked) {
       setIsDropdownVisible(true);
-      setIsHovered(true);
     }
   };
 
   const handleMouseLeave = () => {
     if (!isClicked) {
       setIsDropdownVisible(false);
-      setIsHovered(false);
     }
+  };
+
+  const navigate = useNavigate();
+
+  const goToProducts = () => {
+    navigate('/products');
+    toggleDropdownDown();
   };
 
   return (
@@ -63,7 +73,7 @@ function Dropdown() {
       {isDropdownVisible && (
         <div className="border-t-8 border-[#00000000;]">
           <div className="min-w-[640px] min-h-[320px] absolute bg-[#ffffff] border-b-8 border-[#3D58BA]">
-            <p className="text-center p-2 hover:bg-[#00000010] cursor-pointer">lol</p>
+            <p onClick={goToProducts} className="text-center p-2 hover:bg-[#00000010] cursor-pointer">Products page shortcut</p>
           </div>
         </div>
       )}
