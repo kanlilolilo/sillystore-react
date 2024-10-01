@@ -78,7 +78,7 @@ function SidebarLeft() {
   };
 
   // State for sidebar visibility
-  const [isSidebarVisible, setIsSidebarVisible] = useState(true);
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
   // Toggle sidebar visibility
   const toggleSidebar = () => {
