@@ -75,17 +75,21 @@ function HamburgerMenu() {
 
       {isMobile && (
         <div
-          className={`lg:hidden min-w-[200px] min-h-[300px] absolute mt-2 transition-all duration-500 bg-[#ffffff] border-b-8 border-[#3D58BA]
-            ${
-              isDropdownVisible ? 'left-0' : '-left-full'
-            } 
+          className={`lg:hidden max-w-[200px] min-h-[250px] absolute mt-2 transition-all duration-500 bg-[#ffffff] border-b-8 border-[#3D58BA] 
+            ${isDropdownVisible ? 'left-0' : '-left-full'}
           `}
+          style={{ display: 'flex', flexDirection: 'column', height: '100%' }} // Flex container
         >
-          <p onClick={goToHome} className="text-center p-2 hover:bg-[#00000010] cursor-pointer">Go to Home</p>
-          <p onClick={goToProducts} className="text-center p-2 hover:bg-[#00000010] cursor-pointer">Products page shortcut</p>
-          <p onClick={goToWishlist} className="text-center p-2 hover:bg-[#00000010] cursor-pointer">Go to Wishlist</p>
-          <p onClick={goToCart} className="text-center p-2 hover:bg-[#00000010] cursor-pointer">Go to Cart</p>
-          <p onClick={goToLogin} className="text-center p-2 hover:bg-[#00000010] cursor-pointer">Login</p>
+          <div style={{ flexGrow: 1 }}> {/* Container for other menu items */}
+            <p onClick={goToHome} className="text-center p-2 hover:bg-[#00000010] cursor-pointer px-4">Go to Home</p>
+            <p onClick={goToProducts} className="text-center p-2 hover:bg-[#00000010] cursor-pointer px-4">Products page shortcut</p>
+            <p onClick={goToWishlist} className="text-center p-2 hover:bg-[#00000010] cursor-pointer px-4">Go to Wishlist</p>
+            <p onClick={goToCart} className="text-center p-2 hover:bg-[#00000010] cursor-pointer px-4">Go to Cart</p>
+          </div>
+
+          <div> {/* Login button at the bottom */}
+            <p onClick={goToLogin} className="text-center p-2 hover:bg-[#00000010] cursor-pointer px-4">Login</p>
+          </div>
         </div>
       )}
     </div>
