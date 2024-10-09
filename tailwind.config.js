@@ -4,7 +4,18 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {},  // no options to configure
+  theme: {
+    colors: {
+      'basicblue': '#7eabeb',
+      'basiccyan': '#46CC9C',
+      'borderblue': '#3D58BA',
+      'hoverblue': '#98c1f9',
+      'hoverblue90': '#98c1f990',
+      'hyperblue': '#adf2ff',
+      'basicbluedark': '#849fe2',
+      'transparentbg': '#adf2ff50',
+    },
+  },  // no options to configure
   variants: { // all the following default to ['responsive']
     imageRendering: ['responsive'],
   },

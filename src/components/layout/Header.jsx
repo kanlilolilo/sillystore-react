@@ -33,18 +33,18 @@ function Header() {
 
   return (
     <div className="z-20 sticky top-0">
-      <div className={`flex w-full h-[28px] bg-[#46CC9C] text-white text-sm overflow-hidden`}>
+      <div className={`flex w-full h-[28px] bg-basiccyan text-white text-sm overflow-hidden`}>
         <div className={`${styles.animatescroll}`}>
-          <p className="mt-0.5 mx-auto my-auto mb-[6px] whitespace-nowrap">Products may ship (they won't :3)</p>
+          <p className="mt-0.5 mx-auto my-auto mb-[6px] whitespace-nowrap font-white">Products may ship (they won't :3)</p>
         </div>
       </div>
-      <div className={`flex w-full h-16 px-6 bg-[#98c1f9] border-b-8 border-[#3D58BA] drop-shadow-xl max-lg:px-[0px] ${styles.banner}`}>
+      <div className={`flex w-full h-16 px-6 bg-hoverblue border-b-8 border-borderblue drop-shadow-xl max-lg:px-[0px] ${styles.banner}`}>
         <a onClick={goHome} class="flex my-auto">
-          <img className="h-12 mr-4 hover:bg-[#98c1f990] rounded-lg transition cursor-pointer rendering-pixelated hidden xl:block" src={logo} alt="Logo" />
+          <img className="h-12 mr-4 hover:bg-hoverblue90 rounded-lg transition cursor-pointer rendering-pixelated hidden xl:block" src={logo} alt="Logo" />
         </a>
         <HamburgerMenu />
         <a onClick={goHome} class="flex my-auto">
-          <img className="h-12 lg:mr-2 max-lg:ml-1 max-lg:my-1 p-1 hover:bg-[#98c1f990] rounded-lg transition cursor-pointer rendering-pixelated xl:hidden max-sm:hidden min-w-12" src={logosmall} alt="Logosmall" />
+          <img className="h-12 lg:mr-2 max-lg:ml-1 max-lg:my-1 p-1 hover:bg-hoverblue90 rounded-lg transition cursor-pointer rendering-pixelated xl:hidden max-sm:hidden min-w-12" src={logosmall} alt="Logosmall" />
         </a>
         
         <div className="max-lg:hidden">

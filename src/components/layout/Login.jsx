@@ -13,8 +13,8 @@ function Login() {
 
   return (
     <div onClick={goToLogin}>
-      <a className="cursor-pointer flex hover:bg-[#98c1f990] rounded-lg transition pl-2 pb-2 mb-1 mt-1">
-        <p className={`font-bold text-[#adf2ff] mt-3`}>Log In</p>
+      <a className="cursor-pointer flex hover:bg-hoverblue90 rounded-lg transition pl-2 pb-2 mb-1 mt-1">
+        <p className={`font-bold text-hyperblue mt-3`}>Log In</p>
         <img
           className="h-8 mt-2 mx-1 transition rendering-pixelated"
           src={user}
