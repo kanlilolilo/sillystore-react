@@ -49,9 +49,14 @@ function Login() {
     navigate('/auth/reset-password');
   };
 
+  const goToSpotifyLogin = () => {
+    navigate('/auth/spotifylogin');
+  };
+
   return (
     <div>
       <h1 className="text-3xl mx-auto text-center mb-6">Login</h1>
+
       <form className="m-6 bg-transparentbg outline outline-basicblue outline-4 rounded-lg p-6 min-w-[200px] max-w-[400px] mx-auto">
         <div className="mb-3">
           <TextField
@@ -116,11 +121,16 @@ function Login() {
           </div>
           <div>
             <a onClick={goToResetPassword} className="hover:underline cursor-pointer">
-              I forgor password :(
+              <p>I forgor password :(</p>
             </a>
           </div>
         </div>
       </form>
+      <div>
+        <a onClick={goToSpotifyLogin} className="hover:underline cursor-pointer text-center">
+          <p>Noooo i want to log in with Spotify! (click here)</p>
+        </a>
+      </div>
     </div>
   );
 }

@@ -40,39 +40,26 @@ function Login() {
     setPasswordValue(event.target.value);
   };
 
-  const currencies = [
-    {
-      value: 'He/Him',
-      label: 'He/Him',
-    },
-    {
-      value: 'She/Her',
-      label: 'She/Her',
-    },
-    {
-      value: 'They/Them',
-      label: 'They/Them',
-    },
-    {
-      value: 'It/Its',
-      label: 'It/Its',
-    },
-    {
-      value: 'Ze/Zir',
-      label: 'Ze/Zir',
-    },
-    {
-      value: 'Xe/Xem',
-      label: 'Xe/Xem',
-    },
-    {
-      value: 'Other',
-      label: 'Other',
-    },
-    {
-      value: 'RvSpijker',
-      label: 'RvSpijker',
-    }
+  const pronouns1 = [
+    { value: 'He', label: 'He' },
+    { value: 'She', label: 'She' },
+    { value: 'They', label: 'They' },
+    { value: 'It', label: 'It' },
+    { value: 'Ze', label: 'Ze' },
+    { value: 'Xe', label: 'Xe' },
+    { value: 'Other', label: 'Other' },
+    { value: 'RvSpijker', label: 'RvSpijker' }
+  ];
+
+  const pronouns2 = [
+    { value: 'Him', label: 'Him' },
+    { value: 'Her', label: 'Her' },
+    { value: 'Them', label: 'Them' },
+    { value: 'Its', label: 'Its' },
+    { value: 'Zir', label: 'Zir' },
+    { value: 'Xem', label: 'Xem' },
+    { value: 'Other', label: 'Other' },
+    { value: 'RvSpijker', label: 'RvSpijker' }
   ];
 
   const navigate = useNavigate();
@@ -154,18 +141,32 @@ function Login() {
           </FormControl>
         </div>
         
-        <div className="mb-2">
+        <div className="mb-2 flex space-x-2">
           <TextField
-            id="outlined-select-currency"
+            id="outlined-select-pronoun1"
             select
-            label="Select"
-            defaultValue="Other"
-            helperText="Please select your Pronouns"
+            label="Singular pronoun"
+            defaultValue="They"
             size="small"
             fullWidth
             required
           >
-            {currencies.map((option) => (
+            {pronouns1.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+          <TextField
+            id="outlined-select-pronoun2"
+            select
+            label="Objective pronoun"
+            defaultValue="Them"
+            size="small"
+            fullWidth
+            required
+          >
+            {pronouns2.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
               </MenuItem>
@@ -173,7 +174,7 @@ function Login() {
           </TextField>
         </div>
 
-        <h1 className="my-2">Adress</h1>
+        <h1 className="my-2 mt-4">Adress</h1>
 
         <div className="mb-3">
           <TextField
@@ -219,16 +220,15 @@ function Login() {
           />
         </div>
 
-        <div className="mb-4">
+        <div className="mb-6 mt-4">
           <Button variant="contained" color="success" fullWidth type="submit">
             Register & Login
           </Button>
         </div>
+        <a onClick={goToLogin} className="hover:underline cursor-pointer">
+          I already have account :3c
+        </a>
       </form>
-
-      <a onClick={goToLogin} className="hover:underline cursor-pointer">
-        I already have account :3c
-      </a>
     </div>
   );
 }

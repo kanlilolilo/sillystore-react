@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { useNavigate } from 'react-router-dom';
 import styles from './Header.module.css';
 import HamburgerMenu from './HamburgerMenu';
@@ -15,6 +15,8 @@ import cart from '../../assets/img/cart_img_blue.png';
 import cartGif from '../../assets/img/cart_img_blue_hover.gif';
 
 import searchIcon from '../../assets/img/search.png';
+
+import SpotifyCard from '../cards/SpotifyCard';
 
 function Header() {
   const navigate = useNavigate();
@@ -89,6 +91,8 @@ function Header() {
             <p className={`absolute font-bold text-xl ml-[52px] top-0 max-lg:ml-[40px] ${styles.amount}`}>1</p>
           </a>
         </div>
+
+        <SpotifyCard />
       </div>
     </div>
   );
