@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { SpotifyContext } from "../SpotifyContext";
 import SingleProduct from './SingleProduct';
+import ArtistProduct from './ArtistProduct';
 import SidebarLeft from './sidebars/SidebarLeft';
 import styles from './Styles.module.css';
 
 function Products() {
   const [visibleProducts, setVisibleProducts] = useState([]);
+  const { loggedIn } = useContext(SpotifyContext); // Added userProfile
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,7 +33,7 @@ function Products() {
       <div className="flex-1">
         <h1 className="text-3xl mx-auto text-center mt-4">Products</h1>
         <div className={`${styles.grid} xl:max-w-[80%] sm:max-w-[560px] mx-auto mt-12 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-16 mb-10 [content-visibility:auto]`}>
-          {Array.from({ length: 12 }).map((_, index) => (
+          {Array.from({ length: loggedIn ? 13 : 12 }).map((_, index) => (
             <div
               key={index}
               data-index={index}
@@ -38,7 +41,7 @@ function Products() {
                 visibleProducts.includes(index.toString()) ? 'opacity-100' : 'opacity-0'
               }`}
             >
-              <SingleProduct />
+              {loggedIn && index === 0 ? <ArtistProduct /> : <SingleProduct />}
             </div>
           ))}
         </div>

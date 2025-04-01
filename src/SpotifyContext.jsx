@@ -20,6 +20,8 @@ export const SpotifyProvider = ({ children }) => {
   const [nowPlaying, setNowPlaying] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
   const [userProfile, setUserProfile] = useState(null);
+  const [topArtist, setTopArtist] = useState(null);
+  const [timeRange, setTimeRange] = useState("short_term"); 
 
   useEffect(() => {
     const tokenFromUrl = getTokenFromUrl().access_token;
@@ -33,12 +35,13 @@ export const SpotifyProvider = ({ children }) => {
 
       // Validate token
       validateToken(token);
+      getTopArtist(timeRange); // Pass the selected time range
     }
 
     if (tokenFromUrl) {
       window.location.hash = "";
     }
-  }, []);
+  }, [timeRange]);
 
   const validateToken = async (token) => {
     try {
@@ -67,6 +70,17 @@ export const SpotifyProvider = ({ children }) => {
     }
   };
 
+  const getTopArtist = async () => {
+    try {
+      const response = await spotifyApi.getMyTopArtists({ limit: 1, time_range: timeRange });
+      if (response && response.items && response.items.length > 0) {
+        setTopArtist(response.items[0]);
+      }
+    } catch (error) {
+      console.error("Error fetching top artist:", error);
+    }
+  };
+
   const logout = () => {
     setSpotifyToken(null);
     setLoggedIn(false);
@@ -77,7 +91,20 @@ export const SpotifyProvider = ({ children }) => {
 
   return (
     <SpotifyContext.Provider
-      value={{ spotifyToken, setSpotifyToken, loggedIn, setLoggedIn, nowPlaying, getNowPlaying, userProfile, logout }}
+      value={{
+        spotifyToken,
+        setSpotifyToken,
+        loggedIn,
+        setLoggedIn,
+        nowPlaying,
+        getNowPlaying,
+        userProfile,
+        logout,
+        topArtist,
+        getTopArtist,
+        timeRange,
+        setTimeRange, // Expose the setter for time range
+      }}
     >
       {children}
     </SpotifyContext.Provider>

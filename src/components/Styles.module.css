@@ -1,5 +1,13 @@
 .product {
-  background-image: url(../assets/img/kharua_tee.png);
+  background-image: url(../assets/img/clothing_img/shirt/kharua_tee.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.artistproduct {
+  background-image: url(../assets/img/clothing_img/shirt/cat_withshirt.png);
   background-repeat: no-repeat;
   background-size: contain;
   width: 100%;

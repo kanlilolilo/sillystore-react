@@ -6,7 +6,7 @@ import crown from '../assets/img/crown.png'
 
 function Profile() {
   const navigate = useNavigate();
-  const { userProfile, logout } = useContext(SpotifyContext);
+  const { userProfile, logout, topArtist } = useContext(SpotifyContext);
 
   const handleLogout = () => {
     logout();
@@ -14,7 +14,7 @@ function Profile() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center pt-8 text-xs sm:text-lg drop-shadow-lg">
+    <div className="flex flex-col justify-center items-center pt-4 text-xs sm:text-lg drop-shadow-lg">
       {userProfile ? (
         <>
           <div className={`${styles.pinkbg} w-full max-w-xs sm:max-w-md lg:max-w-xl border-4 p-6 rounded-lg shadow-lg flex flex-col items-center`}>
@@ -36,6 +36,21 @@ function Profile() {
               <p className="mb-2 bg-[#fff] border-[3px] rounded-lg p-1 truncate overflow-hidden text-ellipsis whitespace-nowrap">{userProfile.email}</p>
               <label className="text-sm">ID</label>
               <p className="bg-[#fff] border-[3px] rounded-lg p-1 truncate overflow-hidden text-ellipsis whitespace-nowrap">{userProfile.id}</p>
+              {topArtist && (
+                <>
+                  <label className="text-sm">Top Artist</label>
+                  <div className="mb-2 bg-[#fff] border-[3px] rounded-lg p-1 flex items-center truncate overflow-hidden text-ellipsis whitespace-nowrap">
+                    {topArtist.images?.[0]?.url && (
+                      <img 
+                        src={topArtist.images[0].url} 
+                        alt="Top Artist" 
+                        className="w-8 h-8 ml-auto mr-2" 
+                      />
+                    )}
+                    <span className="mr-auto">{topArtist.name} {topArtist.popularity}</span>
+                  </div>
+                </>
+              )}
             </div>
           </div>
           <button 
