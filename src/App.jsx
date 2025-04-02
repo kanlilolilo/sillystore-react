@@ -20,13 +20,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="products" element={<Products />} />
-          <Route path="product/:id" element={<Product />} />
+          <Route path="product" element={<Product />} />
           <Route path="auth/spotifylogin" element={<SpotifyLogin />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="profile" element={<Profile />} />
           <Route path="auth/login" element={<Login />} />
           <Route path="auth/register" element={<Register />} />
           <Route path="auth/logout" element={<Logout />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="cart" element={<Cart />} />
         </Routes>
       </div>
     </SpotifyProvider>

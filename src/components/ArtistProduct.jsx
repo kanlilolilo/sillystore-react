@@ -8,17 +8,23 @@ import cartGif from '../assets/img/cart_img_white_hover.gif';
 function ArtistProduct() {
   const { topArtist, loggedIn } = useContext(SpotifyContext);
 
+  const navigate = useNavigate();
+
+  const goToProductPage = () => {
+    navigate('/product');
+  }
+
   if (!loggedIn) {
-    return null; // Do not render if not logged in
+    return null;
   }
 
   return (
-    <div className={`${styles.artistproduct} single-product cursor-pointer w-[240px] h-[240px] flex rounded-3xl mx-auto drop-shadow-lg -z-10`}>
-      <div className={`${styles.pixeltextbox} w-[220px] h-10 mt-auto rendering-pixelated`}>
-        <h1 className=" text-lg mt-[4.5px] px-4 max-w-[196px] truncate cursor-default">
+    <div onClick={goToProductPage} className={`${styles.artistproduct} single-product cursor-pointer w-[240px] h-[240px] flex rounded-3xl mx-auto drop-shadow-lg -z-10`}>
+      <div className={`w-[220px] h-10 mt-auto border-[7px] border-[#686464] bg-[#fff]`}>
+        <h1 className=" text-lg px-2 max-w-[190px] truncate cursor-default">
           {topArtist ? `${topArtist.name}'s super mooie tshirt` : 'Loading...'}
         </h1>
-        <div className={`${styles.pixelcircle} w-16 h-16 -mr-[28px] pt-3.5 pl-3 -mt-[56.5px] ml-auto cursor-pointer rendering-pixelated`}>
+        <div className={`${styles.pixelcircle} w-16 h-16 -mr-[28px] pt-3.5 pl-3 -mt-[59px] ml-auto cursor-pointer rendering-pixelated`}>
           <img 
             src={cart} className="h-9 w-9 rendering-pixelated"
             onMouseEnter={(e) => e.currentTarget.src = cartGif}
