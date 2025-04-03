@@ -37,19 +37,19 @@ export default function App() {
           {/* big slides */}
           <SwiperSlide className="swiper-zoom-container">
             <a href="" className="cursor-default">
-              <img src={testimg} alt="Slide 1" className="w-[1920px] rendering-pixelated sm:h-[480px] sm:w-auto bg-[#fff]"/>
+              <img src={testimg} alt="Slide 1" className="w-auto sm:h-[480px] sm:w-auto bg-[#fff]"/>
             </a>
           </SwiperSlide>
           
           <SwiperSlide className="swiper-zoom-container">
             <a href="https://www.rvspijker.nl/" className="cursor-default">
-              <img src={testimg} alt="Slide 1" className="w-[1920px] sm:h-[480px] sm:w-auto bg-[#fff]"/>
+              <img src={testimg} alt="Slide 1" className="w-auto sm:h-[480px] sm:w-auto bg-[#fff]"/>
             </a>
           </SwiperSlide>
 
           <SwiperSlide className="swiper-zoom-container">
             <a href="" className="cursor-default">
-              <img src={testimg} alt="Slide 1" className="w-[1920px] sm:h-[480px] sm:w-auto bg-[#fff]"/>
+              <img src={testimg} alt="Slide 1" className="w-auto sm:h-[480px] sm:w-auto bg-[#fff]"/>
             </a>
           </SwiperSlide>
           
