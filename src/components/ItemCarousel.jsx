@@ -16,7 +16,7 @@ import { Zoom, Pagination, Autoplay } from 'swiper/modules';
 export default function App() {
   return (
     <>
-      <div className="-mt-6 -mr-6 -ml-6 mb-6">
+      <div className="lg:pt-12">
         <Swiper
           style={{
             '--swiper-navigation-color': '#fff',
