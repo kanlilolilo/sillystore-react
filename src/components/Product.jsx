@@ -3,28 +3,46 @@ import { useNavigate } from 'react-router-dom';
 import { SpotifyContext } from '../SpotifyContext';
 import ItemCarousel from './ItemCarousel';
 import styles from './Styles.module.css';
+import Button from '@mui/material/Button';
 
 function Product() {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden mb-8">
       <div className="lg:flex overflow-hidden">
         <div className="flex-1 h-full overflow-hidden">
           <ItemCarousel />
         </div>
-        <div className="w-[2px] bg-[#00000050] mr-4 "></div>
-        <div className="flex flex-col justify-center flex-1 sm:gap-8 gap-4 overflow-hidden">
-          <div className={`h-auto sm:p-4 p-2 sm:mx-8 mx-2 shadow-lg mx-8 h-full overflow-auto border-8 border-[#686464] text-center bg-[#fff]`}>
+        <div className="flex flex-col justify-center flex-1 sm:gap-8 gap-4 max-sm:mt-4">
+          <div className={`sm:p-6 p-3 sm:mx-8 mx-2`}>
             <h1 className="sm:text-3xl text-lg font-bold">Super Coole tshirt</h1>
           </div>
-          <div className={`min-h-[360px] sm:p-6 p-3 shadow-lg flex-1 sm:mx-8 mx-2 overflow-auto border-8 border-[#686464] text-center bg-[#fff]`}>
+          <div className={`sm:p-6 p-3 flex-1 sm:mx-8 mx-2`}>
             <h1 className="text-xl font-bold">Holy Moley!</h1>
           </div>
-          <div className="flex flex-row">
-            <div className={`h-auto border-8 border-[#ff0000] sm:p-4 p-2 shadow-lg sm:ml-8 sm:mr-4 ml-2 mr-2 w-full overflow-auto text-center bg-[#ff9090] cursor-pointer`}>
-              <h1 className="sm:text-2xl text-sm font-bold">Add to cart :3</h1>
+          <div className="flex flex-row gap-2 sm:mx-8 mx-2">
+            <div className={`cursor-pointer flex-grow`}>
+              <Button
+                variant="contained"
+                style={{
+                  backgroundColor: '#3d58ba',
+                  color: '#fff',
+                }}
+                className="w-full h-10 sm:h-12"
+              >
+                NU KOPEN PLS PLS
+              </Button>
             </div>
-            <div className={`h-auto border-8 border-[#ff0000] sm:p-4 p-2 shadow-lg sm:mr-8 sm:ml-4 mr-2 ml-2 w-full overflow-auto text-center bg-[#ff9090] cursor-pointer`}>
-              <h1 className="sm:text-2xl text-sm font-bold">BUY NOW!!!</h1>
+            <div className={`cursor-pointer`}>
+            <Button
+              variant="contained"
+              style={{
+                backgroundColor: '#dd125f',
+                color: '#fff',
+              }}
+              className="w-full h-10 sm:h-12"
+            >
+              Add to cart :3
+            </Button>
             </div>
           </div>
         </div>
