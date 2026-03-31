@@ -54,6 +54,11 @@ function Dropdown() {
     navigate('/products');
     toggleDropdownDown();
   };
+  const goToSpotifyShirt = () => {
+    navigate('/product');
+    toggleDropdownDown();
+  };
+
 
   return (
     <div
@@ -74,6 +79,7 @@ function Dropdown() {
         <div className="border-t-8 border-[#00000000;]">
           <div className="min-w-[640px] min-h-[320px] absolute bg-[#ffffff] border-b-8 border-[#3D58BA]">
             <p onClick={goToProducts} className="text-center p-2 hover:bg-[#00000010] cursor-pointer">Products page shortcut</p>
+            <p onClick={goToSpotifyShirt} className="text-center p-2 hover:bg-[#00000010] cursor-pointer">Special Spotify Shirt</p>
           </div>
         </div>
       )}
